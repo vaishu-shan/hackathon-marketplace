@@ -54,7 +54,7 @@ function Section_1() {
         >
           Event NFTs!
         </b>
-        <p className="text-gray-300 text-sm sm:text-base text-gray-900/90">
+        <p className="text-white text-sm sm:text-base text-gray-900/90">
           Non-fungible tokens, or NFTs, are artworks created on the{" "}
           <br className="sm:flex hidden" />
           blockchain with unique encryption codes{" "}

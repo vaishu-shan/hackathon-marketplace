@@ -40,7 +40,7 @@ function Explore() {
         className="flex flex-col gap-3 w-full h-[9pc] sm:h-[15pc] items-center justify-center "
       >
         <h2 className="text-2xl sm:text-3xl dark:text-white/90 font-semibold">
-          Explore NFTs
+          Explore Tickets
         </h2>
         <div className="flex gap-3 text-sm sm:text-base dark:text-white">
           <span className="dark:text-white/80">Home</span>/

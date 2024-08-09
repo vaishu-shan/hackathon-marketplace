@@ -28,8 +28,15 @@ const Cart = () => {
                 className="flex flex-col gap-3 w-full h-[9pc] sm:h-[15pc] items-center justify-center "
                 style={{ minHeight: "85vh" }}
             >
+                               <img
+        src="https://opne9reactnext.vercel.app/_next/static/media/bg-home2.d35f9112.png"
+        className="left-0 top-[15pc] absolute"
+        alt=""
+      />
                 <h2 className="text-2xl sm:text-3xl dark:text-white/90 font-semibold">
-                    Cart NFTs
+                    Cart  <b className="border-2 sm:text-2xl text-lg lg:shadow-none font-semibold lg:shadow-purple-800/80 sm:border-0 rounded-md shadow-lg shadow-purple-800/80 p-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
+       Tickets
+        </b>
                 </h2>
                 <div className="flex flex-col gap-4" style={{ marginTop: 50 }}>
                     {cartItems.map((item) => (

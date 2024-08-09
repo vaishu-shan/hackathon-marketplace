@@ -63,7 +63,7 @@ function Section_4() {
               alt=""
             />
           </div>
-          <h2 className="dark:text-white/90 sm:text-lg">Add your NFT's</h2>
+          <h2 className="dark:text-white/90 sm:text-lg">Add your Ticket NFT's</h2>
           <p className="dark:text-white/50 sm:text-lg">
             We've made the template fully responsive, so it looks great on all
             devices: desktop, tablets and.
@@ -81,10 +81,10 @@ function Section_4() {
               alt=""
             />
           </div>
-          <h2 className="dark:text-white/90 sm:text-lg">Sell Your NFT's</h2>
+          <h2 className="dark:text-white/90 sm:text-lg">Sell Your Ticket NFT's</h2>
           <p className="dark:text-white/50 sm:text-lg">
             I throw myself down among the tall grass by the stream as I lie
-            close to the earth NFT's.
+            close to the Dua Lipa Ticket NFT's.
           </p>
         </div>
       </div>
