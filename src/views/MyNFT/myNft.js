@@ -15,8 +15,8 @@ const MyNFT = () => {
     const [silverCardData, setSilverCardData] = useState(null)
 
     const platinumCardImages = Array(platinumCardData).fill(platinum);
-    const goldCardImages = Array(platinumCardData).fill(platinum);
-    const silverCardImages = Array(platinumCardData).fill(platinum);
+    const goldCardImages = Array(goldCardData).fill(platinum);
+    const silverCardImages = Array(silverCardData).fill(platinum);
 
     useEffect(() => {
         PlatniumTicket();
@@ -61,63 +61,149 @@ const MyNFT = () => {
     return (
         <div
             id="section-1"
-            className="flex flex-col gap-3 w-full h-[9pc] sm:h-[15pc] items-center justify-center "
+            className="flex flex-col justify-around px-4 mt-7 "
             style={{ minHeight: "85vh" }}
         >
-               <img
-        src="https://opne9reactnext.vercel.app/_next/static/media/bg-home2.d35f9112.png"
-        className="left-0 top-[15pc] absolute"
-        alt=""
-      />
-            <h2 className="text-2xl sm:text-3xl dark:text-white/90 font-semibold">
+            <img
+                src="https://opne9reactnext.vercel.app/_next/static/media/bg-home2.d35f9112.png"
+                className="left-0 top-[15pc] absolute"
+                alt=""
+            />
+            <h2 className="text-2xl sm:text-3xl dark:text-white/90 font-semibold" style={{textAlign:'center', margin:"50px auto 30px"}}>
                 Your  <b className="border-2 sm:text-2xl text-lg lg:shadow-none font-semibold lg:shadow-purple-800/80 sm:border-0 rounded-md shadow-lg shadow-purple-800/80 p-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
-          Tickets
-        </b>
+                    Tickets
+                </b>
             </h2>
-<div className="flex relative z-10 flex-wrap gap-5 justify-evenly">
-            {platinumCardImages?.map((src, index) => {
-                return (
-                    // <img key={index} src={src} alt={`Replicated Image ${index}`} />
-                    <Link
-                        to=""
-                        key="1"
-                        className="border-[1px] m-2 border-gray-700/20 group transition-all hover:-translate-y-3 rounded-xl flex flex-col gap-2 flex-2 w-[27pc] bg-darkBlue-600 p-3"
-                        
-                    >
-                        <div className="flex gap-3 items-center">
-                            <img
-                                className="w-11 rounded-full bg-darkBlue-300 h-11"
-                                src={demoUserAvatar}
-                                alt=""
-                            />
-                            <div className="flex flex-col">
-                                <span className="text-white/50 text-xs line-clamp-1 rounded-md  w-[6pc] h-[1pc]">
-                                    Concert By :
-                                </span>{" "}
-                                <Link
-                                    to=""
-                                    className="text-white/90 rounded-md w-[9pc] h-[1.5pc] hover:text-pink-500 hover:scale-[99%] transition-all line-clamp-1 text-sm font-normal"
-                                >
-                                    Dua Lipa
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="border-[1px] relative z-30 hover:shadow-xl shadow-darkBlue-700 hover:-translate-y-1  border-gray-700/70 h-[17pc] bg-darkBlue-600/40 transition-all w-full overflow-hidden rounded-xl flex items-center justify-center">
-                            <img
-                                className="h-full absolute z-10 cw-max !min-w-fit group-hover:scale-125 transition-all"
-                                src={src}
-                                alt=""
-                            />
-                            <img
-                                className="w-full blur-sm h-full absolute cw-max !min-w-fit group-hover:scale-125 transition-all"
-                                src={src}
-                                alt=""
-                            />
-                        </div>
+            <div className="flex relative z-10 flex-wrap gap-5 justify-evenly">
+                {platinumCardImages?.map((src, index) => {
+                    return (
 
-                    </Link>
-                )
-            })}
+                        <Link
+                            to=""
+                            key="1"
+                            className="border-[1px] m-2 border-gray-700/20 group transition-all hover:-translate-y-3 rounded-xl flex flex-col gap-2 flex-2 w-[27pc] bg-darkBlue-600 p-3"
+
+                        >
+                            <div className="flex gap-3 items-center">
+                                <img
+                                    className="w-11 rounded-full bg-darkBlue-300 h-11"
+                                    src={demoUserAvatar}
+                                    alt=""
+                                />
+                                <div className="flex flex-col">
+                                    <span className="text-white/50 text-xs line-clamp-1 rounded-md  w-[6pc] h-[1pc]">
+                                        Concert By :
+                                    </span>{" "}
+                                    <Link
+                                        to=""
+                                        className="text-white/90 rounded-md w-[9pc] h-[1.5pc] hover:text-pink-500 hover:scale-[99%] transition-all line-clamp-1 text-sm font-normal"
+                                    >
+                                        Dua Lipa
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="border-[1px] relative z-30 hover:shadow-xl shadow-darkBlue-700 hover:-translate-y-1  border-gray-700/70 h-[17pc] bg-darkBlue-600/40 transition-all w-full overflow-hidden rounded-xl flex items-center justify-center">
+                                <img
+                                    className="h-full absolute z-10 cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                                <img
+                                    className="w-full blur-sm h-full absolute cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+
+                        </Link>
+                    )
+                })}
+                {goldCardImages?.map((src, index) => {
+                    return (
+
+                        <Link
+                            to=""
+                            key="1"
+                            className="border-[1px] m-2 border-gray-700/20 group transition-all hover:-translate-y-3 rounded-xl flex flex-col gap-2 flex-2 w-[27pc] bg-darkBlue-600 p-3"
+
+                        >
+                            <div className="flex gap-3 items-center">
+                                <img
+                                    className="w-11 rounded-full bg-darkBlue-300 h-11"
+                                    src={demoUserAvatar}
+                                    alt=""
+                                />
+                                <div className="flex flex-col">
+                                    <span className="text-white/50 text-xs line-clamp-1 rounded-md  w-[6pc] h-[1pc]">
+                                        Concert By :
+                                    </span>{" "}
+                                    <Link
+                                        to=""
+                                        className="text-white/90 rounded-md w-[9pc] h-[1.5pc] hover:text-pink-500 hover:scale-[99%] transition-all line-clamp-1 text-sm font-normal"
+                                    >
+                                        Dua Lipa
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="border-[1px] relative z-30 hover:shadow-xl shadow-darkBlue-700 hover:-translate-y-1  border-gray-700/70 h-[17pc] bg-darkBlue-600/40 transition-all w-full overflow-hidden rounded-xl flex items-center justify-center">
+                                <img
+                                    className="h-full absolute z-10 cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                                <img
+                                    className="w-full blur-sm h-full absolute cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+
+                        </Link>
+                    )
+                })}
+                {silverCardImages?.map((src, index) => {
+                    return (
+
+                        <Link
+                            to=""
+                            key="1"
+                            className="border-[1px] m-2 border-gray-700/20 group transition-all hover:-translate-y-3 rounded-xl flex flex-col gap-2 flex-2 w-[27pc] bg-darkBlue-600 p-3"
+
+                        >
+                            <div className="flex gap-3 items-center">
+                                <img
+                                    className="w-11 rounded-full bg-darkBlue-300 h-11"
+                                    src={demoUserAvatar}
+                                    alt=""
+                                />
+                                <div className="flex flex-col">
+                                    <span className="text-white/50 text-xs line-clamp-1 rounded-md  w-[6pc] h-[1pc]">
+                                        Concert By :
+                                    </span>{" "}
+                                    <Link
+                                        to=""
+                                        className="text-white/90 rounded-md w-[9pc] h-[1.5pc] hover:text-pink-500 hover:scale-[99%] transition-all line-clamp-1 text-sm font-normal"
+                                    >
+                                        Dua Lipa
+                                    </Link>
+                                </div>
+                            </div>
+                            <div className="border-[1px] relative z-30 hover:shadow-xl shadow-darkBlue-700 hover:-translate-y-1  border-gray-700/70 h-[17pc] bg-darkBlue-600/40 transition-all w-full overflow-hidden rounded-xl flex items-center justify-center">
+                                <img
+                                    className="h-full absolute z-10 cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                                <img
+                                    className="w-full blur-sm h-full absolute cw-max !min-w-fit group-hover:scale-125 transition-all"
+                                    src={src}
+                                    alt=""
+                                />
+                            </div>
+
+                        </Link>
+                    )
+                })}
             </div>
         </div>
     )
