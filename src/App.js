@@ -11,6 +11,7 @@ import PrivacyPolicy from "./views/Other/PrivacyPolicy";
 import Nft from "./views/ProductOverview/Nft";
 import Collection from "./views/ProductOverview/Collection";
 import Cart from "./views/Cart/Cart";
+import MyNFT from "./views/MyNFT/myNft";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/nft/:id" element={<Nft />} />
             <Route path="/collection/:id" element={<Collection />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/your-nft" element={<MyNFT />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
 
           </Routes>

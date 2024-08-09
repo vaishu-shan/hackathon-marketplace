@@ -1,17 +1,32 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../context/cart'
 import UserAvatar from "../../assets/images/avatar.jpg";
+import { mintTicket } from '../../web3Service/Web3Integration';
+import { useSelector } from "react-redux";
 
 const Cart = () => {
     const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
-
+    const AccountState = useSelector((state) => state.EthAccountStates);
     console.log("cartItems", cartItems)
+
+
+    const EventTicketMint = async () => {
+        try {            
+            let accAddress = AccountState?.account;
+            const mintRes = await mintTicket(accAddress,"0x457A6C81926875CA32028974bf83E001Ea43205d");
+            console.log("EventTicketMint", mintRes)
+        } catch (e) {
+            console.log("err while integration", e)
+            return
+        }
+    }
+
     return (
         <>
             <div
                 id="section-1"
                 className="flex flex-col gap-3 w-full h-[9pc] sm:h-[15pc] items-center justify-center "
-                style={{ minHeight: "60vh" }}
+                style={{ minHeight: "85vh" }}
             >
                 <h2 className="text-2xl sm:text-3xl dark:text-white/90 font-semibold">
                     Cart NFTs
@@ -50,7 +65,8 @@ const Cart = () => {
                     ))}
                     {
                         cartItems.length > 0 ? (
-                            <div className="flex flex-col justify-between items-center">
+                            <>
+                            <div className="flex flex-row justify-center items-center"   style={{marginTop:40}}>
                                 <button
                                     className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
                                     onClick={() => {
@@ -59,7 +75,18 @@ const Cart = () => {
                                 >
                                     Clear cart
                                 </button>
+                                <button
+                                    className="px-4 py-2 bg-pink-600 text-white text-xs font-bold uppercase rounded hover:bg-pink-500 focus:outline-none focus:bg-gray-700"
+                                   style={{marginLeft:20}}
+                                    onClick={() => {
+                                        EventTicketMint()
+                                    }}
+                                >
+                                    Book Tickets
+                                </button>
                             </div>
+
+                            </>
                         ) : (
                             <h1 className="text-lg text-white font-bold">Your cart is empty</h1>
                         )
