@@ -15,8 +15,8 @@ const MyNFT = () => {
     const [silverCardData, setSilverCardData] = useState(null)
 
     const platinumCardImages = Array(platinumCardData).fill(platinum);
-    const goldCardImages = Array(goldCardData).fill(platinum);
-    const silverCardImages = Array(silverCardData).fill(platinum);
+    const goldCardImages = Array(goldCardData).fill(gold);
+    const silverCardImages = Array(silverCardData).fill(silver);
 
     useEffect(() => {
         PlatniumTicket();

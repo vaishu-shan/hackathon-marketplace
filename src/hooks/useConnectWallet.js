@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import store from "../app/redux/ReduxStore";
 import { setEthAccount } from "../app/redux/ReduxSlices";
-import { getUserNamePicByEthAddress } from "../api/profile.apis";
+// import { getUserNamePicByEthAddress } from "../api/profile.apis";
 
 export const WalletInstance = window.ethereum || "";
 
@@ -21,15 +21,15 @@ export const Connect = async () => {
 
         const Balance = web3.utils.fromWei(EthAccountBalanceInWei, "ether");
 
-        const userProfile = await getUserNamePicByEthAddress(EthAccounts[0]);
+        // const userProfile = await getUserNamePicByEthAddress(EthAccounts[0]);
 
         store.dispatch(
           setEthAccount({
             isConnect: true,
             account: EthAccounts[0],
             balance: Balance,
-            userName: userProfile? userProfile.userName : "",
-            userAvatar: userProfile ? userProfile.userProfile : "",
+            // userName: userProfile? userProfile.userName : "",
+            // userAvatar: userProfile ? userProfile.userProfile : "",
           })
         );
 

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/navbar.jpg";
+import logo from "../assets/images/TICKETH.png";
 import metamaskLogo from "../assets/images/metamask.svg";
 import { Link, NavLink } from "react-router-dom";
 import { SiEthereum } from "react-icons/si";
@@ -35,7 +35,7 @@ function Navbar() {
         >
           <img src={logo} className="h-12 xs:h-16" alt="Logo" />
           <span className="self-center text-base xs:text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white/80">
-            Dua Lipa
+          TickETH
           </span>
         </Link>
         <ul

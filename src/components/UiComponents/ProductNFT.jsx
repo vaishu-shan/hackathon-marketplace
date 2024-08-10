@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FaEthereum } from "react-icons/fa6";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { getUserNamePicByEthAddress } from "../../api/profile.apis";
 import demoUserAvatar from "../../assets/images/avatar.jpg";
 import platinum from "../../assets/images/PLATINUM.jpg";
 import gold from "../../assets/images/GOLD.jpg";
@@ -18,10 +17,9 @@ const feed = [
 ]
 
 export function ProductNFT({ data, link, button }) {
-  console.log("data", data);
+
   const { cartItems, addToCart } = useContext(CartContext);
 
-  const [NFTsCreatorDetails, setNFTsCreatorDetails] = useState({});
   const [addedToCart, setAddedToCart] = useState(false);
 
   useEffect(() => {
@@ -38,18 +36,7 @@ export function ProductNFT({ data, link, button }) {
     }
   }, [addedToCart]);
 
-  useEffect(() => {
-    const fetching = async () => {
-      try {
-        const response = await getUserNamePicByEthAddress(1);
-        setNFTsCreatorDetails(response);
-        // console.log("nft ID",response[0])
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetching();
-  }, []);
+
 
   return (
     <>

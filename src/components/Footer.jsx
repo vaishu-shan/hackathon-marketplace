@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/navbar.jpg";
+import logo from "../assets/images/TICKETH.png";
 import { FaEthereum, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ function Footer() {
             <a href="https://flowbite.com/" className="flex items-center">
               <img src={logo} className="h-8 me-3" alt="Logo" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-              Dua Lipa
+            TickETH
               </span>
             </a>
           </div>

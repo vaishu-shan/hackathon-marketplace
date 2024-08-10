@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Product404 from "../../../components/UiComponents/Product404";
 import LoadingBar from "react-top-loading-bar";
 import {
   ProductNFT,
   SkeletonProductNFT,
 } from "../../../components/UiComponents/ProductNFT";
-import { fetchAllNFTs } from "../../../api/nft.apis";
 
 function ShopNFTs({ filters }) {
   const DummySkeletonData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -19,23 +17,7 @@ function ShopNFTs({ filters }) {
     filters.set("category", "");
   }, []);
 
-  useEffect(() => {
-    const fetchNFTs = async () => {
-      try {
-        const response = await fetchAllNFTs(
-          filters.get("search"),
-          filters.get("category"),
-          limit
-        );
-        setNFTsItems(response);
-      } catch (error) {
-        console.log(error);
-      }
-      setProgress(100);
-      setIsLoading(true);
-    };
-    fetchNFTs();
-  }, [filters, limit]);
+
 
   const loadMore = () => {
     setLimit(limit + 5);

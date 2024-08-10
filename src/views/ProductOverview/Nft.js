@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
 import Product404 from "../../components/UiComponents/Product404";
 import { Tooltip } from "flowbite-react";
-import { fetchAllNFTs } from "../../api/nft.apis";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { getUserNamePicByEthAddress } from "../../api/profile.apis";
+// import { getUserNamePicByEthAddress } from "../../api/profile.apis";
 import demoAvatar from "../../assets/images/user-demo-avatar.svg";
 import openSea from "../../assets/images/Opensea.svg";
 import ethScan from "../../assets/images/EthScan.svg";
@@ -15,11 +14,9 @@ import NftBuy from "./components/NftBuy";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Toaster } from "react-hot-toast";
-import { fetchNFTById } from "../../api/nft.apis";
 import NftChart from "./components/NftChart";
 import NftListing from "./components/NftListing";
 import NftActivity from "./components/NftActivity";
-import { addNFTFavorite } from "../../api/other.apis";
 import { SuccessToast } from "../../app/Toast/Success";
 import { ErrorToast } from "../../app/Toast/Error";
 function Nft() {
@@ -64,81 +61,8 @@ function Nft() {
 
   };
 
-  useEffect(() => {
-    const fetching = async () => {
-      try {
-        const response = await fetchAllNFTs("", "Art", 5);
-        setRelatedNFTs(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetching();
-  }, []);
-
-  useEffect(() => {
-    const fetching = async () => {
-      try {
-        const response = await fetchNFTById(id);
-        if (!response) {
-          navigate("/");
-          return null;
-        }
-        setNFTsItems(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetching();
-  }, [id, ComponentLoad]);
 
 
-
-  useEffect(() => {
-    const fetching = async () => {
-      try {
-        const creatorAvatar = await getUserNamePicByEthAddress(
-          NFTsItems.Creator
-        );
-        const ownerAvatar = await getUserNamePicByEthAddress(
-          NFTsItems.CurrentOwner
-        );
-
-        setProfilePictures({
-          creator: creatorAvatar.userProfile || demoAvatar,
-          owner: ownerAvatar.userProfile || demoAvatar,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    if (NFTsItems.Creator) {
-      fetching();
-    }
-  }, [NFTsItems.Creator]);
-
-  console.log("NFTsItems", NFTsItems)
-
-
-  const handleFavorite = async () => {
-    if (!EthAccount.isConnect) {
-      ErrorToast("Wallet not connect ! 💔");
-      return null;
-    }
-    try {
-      const result = await addNFTFavorite(EthAccount.account, {
-        NFTid: id,
-        createdBy: NFTsItems.Creator,
-        image: NFTsItems.Image,
-        price: NFTsItems.Price,
-      });
-      if (result.success) {
-        SuccessToast(result.message);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div className="sm:p-0 p-4">
@@ -230,7 +154,7 @@ function Nft() {
                 </Link>
               </Tooltip>
               <div
-               onClick={handleFavorite}
+              
                 className="flex gap-2 items-center p-2 dark:bg-pink-500 rounded-xl"
               >
                 <FaHeart className="cursor-pointer rounded-sm transition-all hover:text-white/80 active:text-purple-700  h-5 w-5 sm:h-6 sm:w-6 p-1" />
