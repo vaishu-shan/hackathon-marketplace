@@ -10,7 +10,7 @@ function Section_3() {
     <div className="sm:h-[17pc] h-[27pc] mt-20 relative rounded-2xl bg-gradient-to-r from-purple-500 overflow-hidden from-10% via-pink-500 via-100% sm:p-5 p-2 flex justify-between items-center">
       <div className="flex z-10 relative flex-col justify-between sm:justify-evenly gap-6 sm:m-0 h-full sm:w-auto w-full">
         <h2 className="text-white/90 sm:text-start text-center text-2xl sm:text-3xl font-semibold">
-          Discover, create and <br /> sell your own NFT
+        TickETH- Your Real-World <br/>Assets (RWA) track
         </h2>
         <div className="flex sm:gap-4 gap-1 w-full flex-row sm:justify-start justify-between items-start sm:flex-row">
           <Link

@@ -4,8 +4,13 @@ import UserAvatar from "../../assets/images/avatar.jpg";
 import { mintTicket } from '../../web3Service/Web3Integration';
 import { useSelector } from "react-redux";
 import Web3 from "web3";
+import { SuccessToast } from "../../app/Toast/Success";
+import { ErrorToast } from "../../app/Toast/Error";
+import { Toaster } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+    const navigate = useNavigate()
     const { cartItems, addToCart, removeFromCart, clearCart } = useContext(CartContext)
     const AccountState = useSelector((state) => state.EthAccountStates);
     console.log("cartItems", cartItems)
@@ -30,34 +35,48 @@ const Cart = () => {
             for (const item of cartState) {
                 let amount = "";
                 let cardType = "";
+                let typeName = "";
                 let cardQuantity = item.quantity;
 
-                
+
                 switch (item.id) {
                     case 1:
                         amount = "0.003";
                         cardType = "1";
+                        typeName = "Platinum"
                         break;
                     case 2:
                         amount = "0.002";
                         cardType = "2";
+                        typeName = "Gold"
+
                         break;
                     case 3:
                         amount = "0.001";
                         cardType = "3";
+                        typeName = "Silver"
+
                         break;
                     default:
                         console.log(`Unknown id: ${item.id}`);
                         continue;
                 }
 
-                let amountInWei = web3.utils.toWei(cardQuantity*amount, "ether");
-                
+                let amountInWei = web3.utils.toWei(cardQuantity * amount, "ether");
                 const mintRes = await mintTicket(cardType, cardQuantity, accAddress, contAddr, amountInWei);
                 console.log(`Minted ticket for cardType: ${cardType}, Quantity: ${cardQuantity}, Result:`, mintRes);
-            }
+                if (mintRes) {
+                    SuccessToast(`Minted  ${cardQuantity} ${typeName} ticket   `);
+                } else {
+                    ErrorToast("Error in transaction; Please try again 💔");
 
+                }
+            }
+            SuccessToast(`You can view your NFTs here  `);
+navigate("/your-nft")
+            
         } catch (e) {
+            ErrorToast("Error in transaction; Please try again 💔");
             console.log("Error while integration", e);
             return;
         }
@@ -70,6 +89,7 @@ const Cart = () => {
                 className="flex flex-col gap-3 w-full h-[9pc] sm:h-[15pc] items-center justify-center "
                 style={{ minHeight: "85vh" }}
             >
+                <Toaster position="leftbottom" />
                 {/* <img
                     src="https://opne9reactnext.vercel.app/_next/static/media/bg-home2.d35f9112.png"
                     className="left-0 top-[15pc] absolute"
@@ -142,65 +162,6 @@ const Cart = () => {
                 </div>
 
             </div>
-
-
-
-
-            {/* <div className="flex-col flex items-center fixed inset-0 left-1/4 bg-white gap-8  p-10  text-black dark:text-white font-normal uppercase text-sm" style={{ background: 'transparent' }}>
-                <h1 className="text-2xl font-bold">Cart</h1>
-                <div className="absolute right-16 top-10">
-
-                </div>
-                <div className="flex flex-col gap-4">
-                    {cartItems.map((item) => (
-                        <div className="flex justify-between items-center" key={item.id}>
-                            <div className="flex gap-4">
-                                <img src={item.thumbnail} alt={item.title} className="rounded-md h-24" />
-                                <div className="flex flex-col">
-                                    <h1 className="text-lg font-bold">{item.title}</h1>
-                                    <p className="text-gray-600">{item.price}</p>
-                                </div>
-                            </div>
-                            <div className="flex gap-4">
-                                <button
-                                    className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-                                    onClick={() => {
-                                        addToCart(item)
-                                    }}
-                                >
-                                    +
-                                </button>
-                                <p>{item.quantity}</p>
-                                <button
-                                    className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-                                    onClick={() => {
-                                        removeFromCart(item)
-                                    }}
-                                >
-                                    -
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                {
-                    cartItems.length > 0 ? (
-                        <div className="flex flex-col justify-between items-center">
-                            <h1 className="text-lg font-bold">Total: ${getCartTotal()}</h1>
-                            <button
-                                className="px-4 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-                                onClick={() => {
-                                    clearCart()
-                                }}
-                            >
-                                Clear cart
-                            </button>
-                        </div>
-                    ) : (
-                        <h1 className="text-lg font-bold">Your cart is empty</h1>
-                    )
-                }
-            </div> */}
         </>
     )
 

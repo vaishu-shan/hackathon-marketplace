@@ -47,17 +47,17 @@ function Section_1() {
           className=" xs:hidden block absolute  w-[6pc] top-[-4pc] -z-10 -rotate-12"
           alt=""
         />
-        <h1 className="text-white text-4xl sm:text-7xl text-gray-900/90 font-semibold leading-tight lg:text-start text-center">
-          Enjoy, Buy and <br /> sell Tickets. <br />
+        <h1 className="text-white text-4xl sm:text-5xl text-gray-900/90 font-semibold leading-tight lg:text-start text-center" style={{lineHeight:"55px"}}>
+        Your Ticket to<br />Secure, Transparent, and<br/> Fraud-Free Events <br />
         </h1>
-        <b className="text-white text-2xl sm:text-7xl lg:border-0 lg:shadow-none lg:shadow-purple-800/80 border-2 shadow-lg shadow-purple-800/80 rounded-lg text-white/90 self-center lg:self-start font-semibold leading-tight p-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
-          Event NFTs!
+        <b className="text-white text-2xl sm:text-5xl lg:border-0 lg:shadow-none lg:shadow-purple-800/80 border-2 shadow-lg shadow-purple-800/80 rounded-lg text-white/90 self-center lg:self-start font-semibold leading-tight p-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
+        Real-World Assets
         </b>
         <p className="text-white text-sm sm:text-base text-gray-900/90">
-          Non-fungible tokens, or NFTs, are artworks created on the{" "}
+        TickETH is a blockchain-based platform that tokenizes event tickets as NFTs,  
           <br className="sm:flex hidden" />
-          blockchain with unique encryption codes{" "}
-          <br className="sm:flex hidden" /> that can be validated for ownership.
+          transforming them into secure, verifiable digital assets that can be traded
+          <br className="sm:flex hidden" /> and validated on the Lisk blockchain.
         </p>
         <div
           id="buttons"
