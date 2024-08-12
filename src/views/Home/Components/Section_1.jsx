@@ -7,6 +7,7 @@ import eth from "../../../assets/images/eth.svg";
 import nft from "../../../assets/images/nft.svg";
 import metaHome from "../../../assets/images/metamaskHome.svg";
 
+
 function Section_1() {
   document.addEventListener("mousemove", (e) => {
     var items = document.querySelectorAll("h1,#NFTimage div");
@@ -49,9 +50,7 @@ function Section_1() {
         <h1 className="text-white text-4xl sm:text-7xl text-gray-900/90 font-semibold leading-tight lg:text-start text-center">
           Enjoy, Buy and <br /> sell Tickets. <br />
         </h1>
-        <b
-          className="text-white text-2xl sm:text-7xl lg:border-0 lg:shadow-none lg:shadow-purple-800/80 border-2 shadow-lg shadow-purple-800/80 rounded-lg text-white/90 self-center lg:self-start font-semibold leading-tight p-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500"
-        >
+        <b className="text-white text-2xl sm:text-7xl lg:border-0 lg:shadow-none lg:shadow-purple-800/80 border-2 shadow-lg shadow-purple-800/80 rounded-lg text-white/90 self-center lg:self-start font-semibold leading-tight p-3 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
           Event NFTs!
         </b>
         <p className="text-white text-sm sm:text-base text-gray-900/90">
@@ -69,9 +68,8 @@ function Section_1() {
             className="py-2.5 px-5 flex-1  text-sm font-medium flex items-center gap-4 justify-center text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-purple-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-purple-600 dark:text-gray-100 border-none dark:hover:text-white bg-gradient-to-tr from-purple-800 to-purple-500 dark:hover:bg-purple-700 text-white/90"
             to="/explore"
           >
-       Book Event
+            Book Event
           </Link>
-    
         </div>
         <div
           id="stats"
@@ -118,12 +116,17 @@ function Section_1() {
             className="absolute sm:left-16 border-[1px] border-darkBlue-100/20 rounded-full backdrop-blur-lg   -z-2 sm:h-[7pc] h-[6pc] sm:w-[7pc] w-[6pc] flex flex-col dark:bg-darkBlue-400/30 p-3 items-center justify-center"
           >
             <span className="font-semibold text-white/80 sm:text-base text-sm">
-                Ticket NFT
+              Ticket NFT
             </span>
             <p className="text-white/60">Available</p>
           </div>
           <div data-move="2">
-            <img src={Nft} className=" relative w-[26pc]" alt="" style={{margin:"30px 45px"}} />
+            <img
+              src={Nft}
+              className=" relative w-[26pc]"
+              alt=""
+              style={{ margin: "30px 45px" }}
+            />
           </div>
           <div
             data-move="3"
@@ -146,7 +149,7 @@ function Section_1() {
               <span className="text-white/60">kunal lo.. </span>
             </div>
           </div>
-   
+
           <div
             data-move="4"
             id="float-5"
@@ -159,7 +162,6 @@ function Section_1() {
             id="float-5"
             className="absolute sm:-bottom-0 -bottom-0 left- right-2 sm:right-[9pc] border-[1px] border-darkBlue-100/20 rounded-2xl backdrop-blur-lg  -z-10 sm:h-[17pc] h-[10pc] sm:w-[29pc] w-[20pc] flex flex-col dark:bg-darkBlue-400/30 p-3 gap-1 items-center justify-start"
           />
-
         </div>
         <div className="bg z-[1] bg-gradient-to-r from-pink-800 absolute h-64 w-64 blur-[10pc] opacity-[100%]" />
         <div className="h-[10pc] w-44 bg-gradient-to-r from-pink-800 blur-[10pc] absolute right-10 bottom-0 opacity-[20%]" />

@@ -260,6 +260,11 @@ nav .active {
 .swiper {
     /* overflow: unset !important; */
 }
+.banner-image{
+    width: 35%;
+    display: block;
+    margin: 40px auto;
+}
 
 /* Style for hiding number input arrows */
 input[type="number"]::-webkit-inner-spin-button,

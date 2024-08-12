@@ -32,7 +32,7 @@ const Cart = () => {
                 let cardType = "";
                 let cardQuantity = item.quantity;
 
-                // Apply amount and cardType based on id
+                
                 switch (item.id) {
                     case 1:
                         amount = "0.003";
@@ -51,7 +51,7 @@ const Cart = () => {
                         continue;
                 }
 
-                let amountInWei = web3.utils.toWei(amount, "ether");
+                let amountInWei = web3.utils.toWei(cardQuantity*amount, "ether");
                 
                 const mintRes = await mintTicket(cardType, cardQuantity, accAddress, contAddr, amountInWei);
                 console.log(`Minted ticket for cardType: ${cardType}, Quantity: ${cardQuantity}, Result:`, mintRes);

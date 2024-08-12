@@ -11,6 +11,7 @@ import PrivacyPolicy from "./views/Other/PrivacyPolicy";
 import Nft from "./views/ProductOverview/Nft";
 import Cart from "./views/Cart/Cart";
 import MyNFT from "./views/MyNFT/myNft";
+import IdeationPage from "./views/Other/IdeationPage";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/your-nft" element={<MyNFT />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-
+            <Route path="/ideation-page" element={<IdeationPage />} />
           </Routes>
           <Footer />
         </div>

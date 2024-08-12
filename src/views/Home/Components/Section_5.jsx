@@ -1,81 +1,136 @@
-import React, { useEffect, useState } from "react";
-import { getTopCreators } from "../../../api/profile.apis";
-import demoUserAvatar from "../../../assets/images/user-demo-avatar.svg";
-import { Link } from "react-router-dom";
-import Product404 from "../../../components/UiComponents/Product404";
+import React from "react";
 
 function Section_5() {
-  const [Creator, setCreator] = useState([]);
-
-  useEffect(() => {
-    const fetching = async () => {
-      try {
-        const response = await getTopCreators(10);
-        setCreator(response);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetching();
-  }, []);
-
   return (
     <div
-      id="section-5"
-      className="flex mt-10 gap-6 lg:gap-20 flex-col  lg:h-[20pc] w-full"
+      id="section-4"
+      className="flex mt-10 justify-center gap-7 flex-col h-full lg:h-[34pc] w-full"
     >
-      <h1 className="dark:text-white/90 text-2xl font-semibold sm:text-4xl">
-        Top Seller in{" "}
-        <b className="border-2 sm:text-2xl font-semibold text-lg lg:shadow-none lg:shadow-purple-800/80 sm:border-0 rounded-md shadow-lg shadow-purple-800/80 p-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
-          All Time
+      <h1 className="dark:text-white/80 text-2xl font-semibold sm:text-4xl">
+        How TickETH Fits into{" "}
+        <b className="border-2 sm:text-3xl text-lg lg:shadow-none font-semibold lg:shadow-purple-800/80 sm:border-0 rounded-md shadow-lg shadow-purple-800/80 p-1 bg-gradient-to-r from-purple-600 via-pink-600 to-blue-500">
+          Lisk:
         </b>
       </h1>
-      <div className="flex flex-col gap-10 flex-wrap mt-5">
-        {Creator ? (
-          Creator.length > 0 ? (
-            <div className="flex w-full justify-center sm:justify-between gap-4 flex-wrap">
-              {Creator.map((item, index) => (
-                <Link
-                  to={`/author/${item.userEthAddress}`}
-                  key={index}
-                  className="flex flex-autoe w-[11pc] h-[11pc] cursor-pointer items-center relative justify-start flex-col gap-2"
-                >
-                  <img
-                    src={item.userProfile ? item.userProfile : demoUserAvatar}
-                    className="h-[6pc] border-[1px] border-gray-700/50 rounded-lg w-[6pc]"
-                    alt=""
-                  />
-                  <div className="right-5 -top-2 h-[1.5pc] absolute w-[1.5pc] text-xs rounded-full text-pink-500 font-semibold bg-white/90  flex items-center justify-center">
-                    {index + 1}
-                  </div>
-                  <div className="flex flex-col gap-1 items-center justify-center">
-                    <span className="text-white font-semibold hover:text-pink-500 transition-all">
-                      {item.userName ? item.userName : "Not found"}
-                    </span>
-                    <p className="text-white/50 text-sm">
-                      {item
-                        ? `${item.userEthAddress.slice(
-                            0,
-                            4
-                          )}...${item.userEthAddress.slice(39)}`
-                        : null}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <Product404
-              message="Creator not found"
-              subMessage="Create our account"
+
+      <p
+        className="text-white text-l text-gray-900/90"
+        style={{
+          margin: "8px auto",
+          letterSpacing: 1,
+          lineHeight: "24px",
+        }}
+      >
+        TickETH is a blockchain-based platform that tokenizes event tickets as
+        NFTs, transforming them into secure, verifiable digital assets that can
+        be traded and validated on the Lisk blockchain. This project directly
+        aligns with the Real-World Assets (RWA) track by bridging the gap
+        between physical event access and digital ownership, leveraging the
+        unique capabilities of blockchain technology to enhance security,
+        transparency, and efficiency in the event ticketing industry.
+      </p>
+      <div className="flex justify-between w-full flex-wrap gap-7 p-4">
+        <div
+          id="nft-steps"
+          className="hover:outline-darkBlue-100 flex-auto transition-all active:scale-95 hover:rotate-2 cursor-pointer outline-2 hover:outline-double bg-darkBlue-600 rounded-lg w-[20pc] p-5 flex flex-col gap-4"
+        >
+          <div className="flex justify-between relative">
+            <img
+              className="w-14 lg:w-18 absolute right-0 -translate-y-10"
+              src="https://rainbowit.net/html/nuron/assets/images/icons/shape-7.png"
+              alt=""
             />
-          )
-        ) : (
-          <Product404
-            message="Creator not found"
-            subMessage="Create our account"
-          />
-        )}
+          </div>
+          <h2 className="dark:text-white/90  sm:text-lg">
+            Tokenization of Real-World Assets:
+          </h2>
+          <p
+            className="dark:text-white/50 sm:text-lg"
+            style={{ fontSize: 14, lineHeight: "24px" }}
+          >
+            TickETH turns physical event tickets into digital assets (NFTs) on
+            the Lisk blockchain. These NFTs represent ownership of a real-world
+            asset—the right to attend an event—ensuring that each ticket is
+            unique, verifiable, and tamper-proof.
+          </p>
+        </div>
+        <div
+          id="nft-steps"
+          className="hover:outline-darkBlue-100 flex-auto transition-all active:scale-95 hover:rotate-2 cursor-pointer outline-2 hover:outline-double  bg-darkBlue-600 rounded-lg w-[20pc] p-5 flex flex-col gap-4"
+        >
+          <div className="flex justify-between relative">
+            <img
+              className="w-14 lg:w-18 absolute right-0 -translate-y-10"
+              src="https://rainbowit.net/html/nuron/assets/images/icons/shape-1.png"
+              alt=""
+            />
+          </div>
+          <h2 className="dark:text-white/90 sm:text-lg">
+            Fraud Prevention and Authenticity:
+          </h2>
+          <p
+            className="dark:text-white/50 sm:text-lg"
+            style={{ fontSize: 14, lineHeight: "24px" }}
+          >
+            By leveraging Lisk's blockchain technology, TickETH addresses common
+            issues in traditional ticketing, such as counterfeiting and
+            scalping. The immutability of the blockchain guarantees that each
+            ticket's ownership history and authenticity can be easily verified,
+            providing a secure and transparent solution for both event
+            organisers and attendees.
+          </p>
+        </div>
+        <div
+          id="nft-steps"
+          className="hover:outline-darkBlue-100 flex-auto transition-all active:scale-95 hover:rotate-2 cursor-pointer outline-2 hover:outline-double  bg-darkBlue-600 rounded-lg w-[20pc] p-5 flex flex-col gap-4"
+        >
+          <div className="flex justify-between relative">
+            <img
+              className="w-14 lg:w-18 absolute right-0 -translate-y-10"
+              src="https://rainbowit.net/html/nuron/assets/images/icons/shape-5.png"
+              alt=""
+            />
+          </div>
+          <h2 className="dark:text-white/90 sm:text-lg">
+            Real-Time Validation and Access Control:
+          </h2>
+          <p
+            className="dark:text-white/50 sm:text-lg"
+            style={{ fontSize: 14, lineHeight: "24px" }}
+          >
+            The platform integrates real-time validation mechanisms, allowing
+            event organisers to verify ticket ownership at the point of entry.
+            This process, facilitated by Lisk's fast and efficient blockchain
+            infrastructure, ensures that only legitimate ticket holders gain
+            access to events, enhancing security and user experience.
+          </p>
+        </div>
+        <div
+          id="nft-steps"
+          className="hover:outline-darkBlue-100  flex-auto transition-all active:scale-95 hover:rotate-2 cursor-pointer outline-2 hover:outline-double  bg-darkBlue-600 rounded-lg w-[20pc] p-5 flex flex-col gap-4"
+        >
+          <div className="flex justify-between relative">
+            <img
+              className="w-14 lg:w-18 absolute right-0 -translate-y-10"
+              src="https://rainbowit.net/html/nuron/assets/images/icons/shape-6.png"
+              alt=""
+            />
+          </div>
+          <h2 className="dark:text-white/90 sm:text-lg">
+            Scalable and User-Friendly:
+          </h2>
+          <p
+            className="dark:text-white/50 sm:text-lg"
+            style={{ fontSize: 14, lineHeight: "24px", lineHeight: "24px" }}
+          >
+            Built on Lisk's scalable and accessible blockchain framework,
+            TickETH offers a user-friendly interface that simplifies the process
+            of tokenizing, trading, and validating event tickets. This approach
+            makes blockchain technology accessible to a broader audience,
+            encouraging the adoption of digital asset management in real-world
+            applications.
+          </p>
+        </div>
       </div>
     </div>
   );

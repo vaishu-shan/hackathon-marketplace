@@ -9,6 +9,7 @@ import demoUserAvatar from "../assets/images/user-demo-avatar.svg";
 import { SuccessToast } from "../app/Toast/Success";
 import { ErrorToast } from "../app/Toast/Error";
 import { Toaster } from "react-hot-toast";
+import Marquee from "react-fast-marquee";
 
 function Navbar() {
   const AccountState = useSelector((state) => state.EthAccountStates);
@@ -35,7 +36,7 @@ function Navbar() {
         >
           <img src={logo} className="h-12 xs:h-16" alt="Logo" />
           <span className="self-center text-base xs:text-xl sm:text-2xl font-semibold whitespace-nowrap dark:text-white/80">
-          TickETH
+            TickETH
           </span>
         </Link>
         <ul
@@ -63,7 +64,7 @@ function Navbar() {
               to="/your-nft"
               className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-darkBlue-300 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >
-            Your Tickets
+              Your Tickets
             </NavLink>
           </li>
           <li>
@@ -71,16 +72,14 @@ function Navbar() {
               to="/cart"
               className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-purple-700 md:p-0 md:dark:hover:text-purple-500 dark:text-white dark:hover:bg-darkBlue-300 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
             >
-             Cart
+              Cart
             </NavLink>
           </li>
         </ul>
         <div className="flex justify-between gap-4 items-center md:justify-center md:w-auto">
           {AccountState.isConnect ? (
             <NavLink to="" id="profile" className="flex gap-3 items-center">
-         
               <div className="flex items-center overflow-hidden justify-center rounded-full h-14 w-14 bg-gradient-to-tr from-pink-600 to-purple-500">
-               
                 <img
                   className="h-max w-max p-[2px] rounded-full"
                   src={
@@ -125,6 +124,26 @@ function Navbar() {
           </div> */}
         </div>
       </div>
+
+      <Marquee speed={70}>
+        <p
+          className="text-white text-l text-gray-900/90"
+          style={{ marginTop: 15, letterSpacing: 1 }}
+        >
+          Want to know about our product;{" "}
+          <a
+          href="/ideation-page"
+            style={{
+              textDecoration: "underline",
+              cursor: "pointer",
+              textUnderlineOffset: 3,
+            }}
+          >
+            CLICK HERE
+          </a>{" "}
+          to read the ideation.
+        </p>
+      </Marquee>
     </nav>
   );
 }

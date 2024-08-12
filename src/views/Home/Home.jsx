@@ -4,6 +4,7 @@ import Section_1 from "./Components/Section_1";
 import Section_3 from "./Components/Section_3";
 import Section_4 from "./Components/Section_4";
 
+
 function Home() {
 
   return (
@@ -11,7 +12,6 @@ function Home() {
       <Section_1 />
       <Section_3/>
       <Section_4/>
-
     </div>
   );
 }
